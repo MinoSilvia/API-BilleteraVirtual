@@ -40,18 +40,12 @@ public class AuthController {
     public ResponseEntity<RegistrationResponse> postRegisterUser(@RequestBody RegistrationRequest req) {
         RegistrationResponse r = new RegistrationResponse();
 
-        /**
-         * Aca creamos la persona y el usuario a traves del service. Insertar codigo
-         * aqui usuarioService.crearUsuario(parametros de req)
-         */
+        Usuario usuario = usuarioService.crearUsuario(req.fullName, req.country, req.identificationType,
+                req.identification, req.birthdDate, req.email, req.password);
 
-        // Usuario usuario = usuarioService.crearUsuario(req.fullName, req.country,
-        // req.identificationType,
-        // req.identification, req.birthDate, req.email, req.password);
         r.isOk = true;
         r.message = "Te registraste con exitoooo!!!!!!!";
-        // r.userId = usuario.getUsuarioId(); // <-- AQUI ponemos el numerito de id para
-        // darle a front!
+        r.userId = usuario.getUsuarioId(); // <-- AQUI ponemos el numerito de id para darle a front!
         return ResponseEntity.ok(r);
 
     }

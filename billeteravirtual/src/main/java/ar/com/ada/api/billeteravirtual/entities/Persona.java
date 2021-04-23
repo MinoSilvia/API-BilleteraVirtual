@@ -15,8 +15,8 @@ public class Persona {
     private String nombre;
     @Column(name = "pais_id")
     private Integer paisId;
-    @Column(name = "tipo_documento")
-    private Integer tipoDocumento;
+    @Column(name = "tipo_documento_id")
+    private Integer tipoDocumentoId;
     private String documento;
     @Column(name = "fecha_nacimiento")
     private Date fechaNacimiento;
@@ -49,12 +49,12 @@ public class Persona {
         this.paisId = paisId;
     }
 
-    public Integer getTipoDocumento() {
-        return tipoDocumento;
+    public Integer getTipoDocumentoId() {
+        return tipoDocumentoId;
     }
 
-    public void setTipoDocumento(Integer tipoDocumento) {
-        this.tipoDocumento = tipoDocumento;
+    public void setTipoDocumentoId(Integer tipoDocumentoId) {
+        this.tipoDocumentoId = tipoDocumentoId;
     }
 
     public String getDocumento() {
